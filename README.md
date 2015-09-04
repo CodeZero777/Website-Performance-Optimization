@@ -18,6 +18,6 @@ Mobile and desktop scores surpass a score greater than 90.
 
 You may compare the original unoptimized website that was provided by Udacity.  You may nitce a significat delay on rendering the html on the screen, roughly >20 seconds:
 
-http://CodeZero777.github.io/Website-Performance-Optimization/Original%20-%20Website%20Optimization/index.html
+http://CodeZero777.github.io/Website-Performance-Optimization/Original-Website_Optimization/index.html
 
 
