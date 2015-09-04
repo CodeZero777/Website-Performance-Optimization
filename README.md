@@ -16,8 +16,9 @@ https://developers.google.com/speed/pagespeed/insights/
 
 Mobile and desktop scores surpass a score greater than 90.
 
-You may compare the original unoptimized website that was provided by Udacity.  You may nitce a significat delay on rendering the html on the screen, roughly >20 seconds:
+The original "unoptimized" website that was provided by Udacity took roughly >20 seconds to render on the screen.
 
-http://CodeZero777.github.io/Website-Performance-Optimization/Original-Website_Optimization/indexUnoptimizedHTML.html
+You may download the Udacity's original files below: 
 
+https://github.com/udacity/frontend-nanodegree-mobile-portfolio
 
