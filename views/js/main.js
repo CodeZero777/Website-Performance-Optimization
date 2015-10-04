@@ -441,10 +441,10 @@ var resizePizzas = function(size) {
     }
 
     // This code was created to avoid repeatition.
-    var randomPizzaContainer = document.querySelectorAll(".randomPizzaContainer");
+    var randomPizzaContainer = document.getElementsByClassName("randomPizzaContainer");
 
-    // Changes the width % for each element pizza.
-    for (var i = 0; i < randomPizzaContainer.length; i++) {
+    // Changes the width % for each element pizza. The array length was saved in a local variable, which is more efficient, that way array's length property is not accessed to check its value each round/iteration.
+    for (var i = 0, len = randomPizzaContainer.length; i < len; i++) {
       randomPizzaContainer[i].style.width = newWidth + "%";
     }
   }
@@ -460,9 +460,10 @@ var resizePizzas = function(size) {
 
 window.performance.mark("mark_start_generating"); // collect timing data
 
+// This variable was removed from the for-loop, so that it doesn't call the DOM repeatedly
+var pizzasDiv = document.getElementById("randomPizzas");
 // This for-loop actually creates and appends all of the pizzas when the page loads
 for (var i = 2; i < 100; i++) {
-  var pizzasDiv = document.getElementById("randomPizzas");
   pizzasDiv.appendChild(pizzaElementGenerator(i));
 }
 
@@ -494,12 +495,13 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
 
-  var items = document.querySelectorAll('.mover');
+  var items = document.getElementsByClassName('mover');
 
   // Runs layout, avoid putting it inside the loop to avoid Forced Synchronous Layout.
   var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
   
-  for (var i = 0; i < items.length; i++) {
+  // The array length was saved in a local variable, which is more efficient, that way the array's length property is not accessed to check its value each round/iteration.
+  for (var i = 0, len = items.length; i < len; i++) {
     // runs recalculate style.
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
@@ -521,15 +523,19 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
+  // The elem variable was declared outside the for-loop so that it would not be created everytime the loop executes.
+  var elem;
+  // Saved the DOM call into a local variable outside the for statement, so that it doesn't call/access the DOM in each iteration.
+  var movingPizzas = document.getElementById("movingPizzas1");
   for (var i = 0; i < 200; i++) {
-    var elem = document.createElement('img');
+    elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
     elem.style.height = "100px";
     elem.style.width = "73.333px";
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
-    document.querySelector("#movingPizzas1").appendChild(elem);
+    movingPizzas.appendChild(elem);
   }
   updatePositions();
 });
