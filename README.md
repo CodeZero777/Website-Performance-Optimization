@@ -24,11 +24,14 @@ https://github.com/udacity/frontend-nanodegree-mobile-portfolio
 
 ##Specifications to optimize website:
 
-1) Pagespeed score for the index.html is above 90. Now it is 95. (before: score was ~60 to 70)
+1) PageSpeed Insights score for the index.html is above 90, (95). (Before optimization: score was ~60 to 70)
+    * Images were optimized, and CSS and JS files were minified.
 
-2) Pizza.html runs avg. 60 fps. (before it was avg. 15 fps)
+2) Pizza.html runs avg. 60 fps. (Before optimization: it was avg. 15 fps)
+    * looked for Forced Sychronous Layout (FSL) and modified some JS code in the main.js.
 
-3) Resizing pizzas time for pizza.html is <5 ms (~0.49ms)
+3) Resizing pizzas time for pizza.html is <5 ms (now ~0.49ms), (Before optimization: ~140ms)
+    * looked for Forced Sychronous Layout (FSL) and modified some JS code in the main.js.
 
 4) Images where optimized using R.I.O.T. (Radical Image Optimizer Tool) software, and CSS and JS files where minified with http://cssminifier.com and http://javascript-minifier.com.
 
