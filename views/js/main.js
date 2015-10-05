@@ -498,10 +498,11 @@ function updatePositions() {
   var items = document.getElementsByClassName('mover');
 
   // Runs layout, avoid putting it inside the loop to avoid Forced Synchronous Layout.
-  var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
-  
+  var phase;
+  var scroll = document.body.scrollTop / 1250;
   // The array length was saved in a local variable, which is more efficient, that way the array's length property is not accessed to check its value each round/iteration.
   for (var i = 0, len = items.length; i < len; i++) {
+    phase = Math.sin(scroll + (i % 5));
     // runs recalculate style.
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
@@ -527,7 +528,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var elem;
   // Saved the DOM call into a local variable outside the for statement, so that it doesn't call/access the DOM in each iteration.
   var movingPizzas = document.getElementById("movingPizzas1");
-  for (var i = 0; i < 200; i++) {
+  for (var i = 0; i < 48; i++) {
     elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
