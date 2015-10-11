@@ -24,9 +24,9 @@ https://github.com/udacity/frontend-nanodegree-mobile-portfolio
 
 ##Specifications to optimize website:
 
-1) PageSpeed Insights score for the index.html is above 90, (95). (Before optimization: score was ~60 to 70)
+1) PageSpeed Insights score for the index.html is above 90 for desktop and mobile, (Desktop score: 97/100; Mobile score: 95/100). (Before optimization: score was ~60 to 70)
 
-    * To achieve this: Images were optimized, and CSS and JS files were minified.
+    * To achieve this: Images were optimized and width size was reduced to 100px, and CSS and JS files were minified.
 
 2) Pizza.html runs avg. 60 fps. (Before optimization: it was avg. 15 fps)
 
