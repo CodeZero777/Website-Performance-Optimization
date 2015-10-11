@@ -528,7 +528,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var elem;
   // Saved the DOM call into a local variable outside the for statement, so that it doesn't call/access the DOM in each iteration.
   var movingPizzas = document.getElementById("movingPizzas1");
-  for (var i = 0; i < 48; i++) {
+  for (var i = 0; i < 40; i++) {
     elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
